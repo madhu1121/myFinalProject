@@ -1,8 +1,10 @@
 import React from 'react'
 import './Nav.scss'
 import flag from '../../assets/images/india.svg'
+import logo from '../../assets/images/logo2.png'
 import Login from '../Login/Login'
 import AddProperty from '../AddProperty/AddProperty'
+import { Link } from 'react-router-dom'
 
 export const Nav = () => {
     return (
@@ -11,14 +13,23 @@ export const Nav = () => {
             <img  src={flag} alt="country_flag"/>
             <p>IND</p>
         </div> */}
-            <section className="nav">
-                <div className="nav__add">
-                    <AddProperty />
+            <div className="nav">
+                <Link className="nav__logo" to="/">
+                    <div >
+                        <img id="logo" src={logo} alt="logo" />
+                    </div>
+                </Link>
+
+                <div className="nav__right">
+                    <div className="nav__right__add">
+                        <AddProperty />
+                    </div>
+                    <div className="nav__right__login">
+                        <Login />
+                    </div>
                 </div>
-                <div className="nav__login">
-                    <Login />
-                </div>
-            </section>
+
+            </div>
 
         </>
     )

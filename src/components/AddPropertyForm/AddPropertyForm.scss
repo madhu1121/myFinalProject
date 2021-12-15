@@ -1,0 +1,14 @@
+.addForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__child{
+        align-self: center;
+    }
+}
+
+P{
+    font-size: 20px;
+    font-weight: 500;
+}
