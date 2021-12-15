@@ -1,0 +1,14 @@
+.main{
+    margin: 5px;
+    padding: 5px;
+
+    &__background{
+
+        &__image{
+            height: 500px;
+            width: 1240px;
+            border: 2px solid orange;
+            border-radius: 30px;
+        }
+    }
+}

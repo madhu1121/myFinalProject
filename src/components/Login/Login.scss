@@ -1,0 +1,22 @@
+.loginButton{
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    height: 50px;
+    width: 100px;
+    border-radius: 30px;
+    background-color: rgb(255, 212, 133);
+    border: 1px solid orange;
+
+    &:hover {
+        cursor: pointer;
+      }
+      
+    &__menubar{
+        align-self: center;
+    }
+    &__person{
+        align-self: center;
+    }
+}
