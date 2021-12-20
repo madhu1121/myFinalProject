@@ -2,9 +2,51 @@ import React from 'react'
 import './AddPropertyForm.scss'
 
 const AddPropertyForm = () => {
+
+    const handleOnSubmit = (event) => {
+        event.preventDefault();
+
+        fetch(`http://localhost:8080/addProperty`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+           
+            body: JSON.stringify({
+                
+                    "title": "property2",
+                    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, sint neque alias dolorem beatae veniam doloribus inventore aliquid ipsam enim sequi tempore aperiam similique quidem, repudiandae minima ipsum. Necessitatibus, enim!",
+                    "type": "townhouse",
+                    "bedrooms": 2,
+                    "bathrooms": 2,
+                    "preference": "family",
+                    "place": "beach",
+                    "areaInSqFt": 647.9,
+                    "price": 6000.00,
+                    "pool": true,
+                    "petFriendly": true,
+                    "hotTub": true,
+                    "childrenPark": true,
+                    "wifi": true,
+                    "breakfast": true,
+                    "dinner": true,
+                    "country": "India",
+                    "state": "Odisha",
+                    "city": "Sambalpur",
+                    "address": "test hgfdd udfd 12345",
+                    "photoUrl": "https://photos.app.goo.gl/G5R1sjUNvCKkHXSw8"
+                
+            })
+          })
+          .then((response) => response.json())
+          .then((text => console.log(text)))
+          .catch(err => console.log(err))
+        } 
+
+    
     return (
         <div className="add">
-            <form action="submit" className="addForm">
+            <form action="submit" className="addForm" onSubmit={handleOnSubmit}>
                 <p className="addForm__child">List you Property</p>
                 <div className="addForm__child">
                 <label htmlFor="title">Add a title to your property</label>
@@ -151,7 +193,7 @@ const AddPropertyForm = () => {
                 </div>
 
                 <div className="addForm__child">
-                <button>Add your property</button>
+                <button onClick={handleOnSubmit}>Add your property</button>
                 <button>Cancel</button>
                 </div>
             </form>
